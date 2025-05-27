@@ -21,9 +21,9 @@ class Pedido(models.Model):
         return f'Pedido N. {self.pk}'
 class ItemPedido(models.Model):
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
-    produto = models.CharField(max_length=55)
+    produto = models.CharField(max_length=255)
     produto_id = models.PositiveIntegerField()
-    variacao = models.CharField(max_length=55)
+    variacao = models.CharField(max_length=255)
     variacao_id = models.PositiveIntegerField()
     preco = models.FloatField()
     preco_promocional = models.FloatField(default=0)
